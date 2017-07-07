@@ -1,0 +1,96 @@
+/************************************************************
+files description
+************************************************************/
+FBC converter(win)
+	converter(exe) downloaded from web site.
+	
+Desktop-01.png
+	texture used in unitytest.max.
+	
+FBX exporter.png
+	screen shot.
+	this is for showing the setting of FBX export.
+	
+test.fbx
+	output data from unitytest.max.
+	
+unitytest.max
+	3ds max file.
+
+/************************************************************
+************************************************************/
+■making 3ds max data.
+[環境]
+	・3ds max8
+	・unity 5.3.0
+	
+	
+[tools]
+・	FBX converter
+		http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=22694909
+		
+		FBX 2013.3 Converter for Windows (exe - 26335Kb)
+		...not 64bit
+		を使用した.
+
+[tips]
+・	Bipedは、FBX export時、非表示設定になるようだ
+・	3d polygon objectは、一つにアタッチしないと、表示位置がズレた。
+・	Bipedの接地キーについて
+		例えば、frame:0 にキーを設定した場合、max上では意図通りAnimationするが、FBXでは「キーなし」と同様の動作となった。
+		frame:0, frame:x(例えば 20)に打つと、所望の動作となった(接地キー自体は問題なく使えるようだ)。
+・	FBXの書き出しには、「Alias(*.FBX)」を使用。
+		設定は、以下を参照
+			FBX converter.png
+			
+・	textureは、FBX書き出しにて、embedを指定
+・	FBX fileは、FBX converterにてcheckすること
+		「Add FBX Viewer」から
+		
+・	unit:
+		unity	: Scene上の単位 = unit = 1m
+
+・	rotation issue
+		maxとunityでは、axisが異なる。
+		そのため、maxで作成したassetをimportする際は、rotationが必要。
+		自分の環境では、assetからhierarchyに配置した時点で自動的にx:270 degされていた。
+		あとは、y axis:180
+		として完了。
+		
+		動かすのに不都合などあるかもしれないので、親となるempty objectを作成し、
+		この中でrotationすると良いかもしれない。
+		
+		この議論をしているpage(query = 3ds max fbx rotation)
+			https://forum.unity3d.com/threads/fbx-model-importing-in-at-90-x-rotation.151603/
+			https://forum.unity3d.com/threads/how-to-get-the-xyz-axis-right-3ds-max-unity.10343/
+			
+・	scale issue
+		3ds maxで作成したassetをimportし、これを配置すると、
+		自動でscale = 2.54 となった。
+		1cm = 2.54 inch なのだが、このあたりの修正を勝手にしてくれている様子。
+		
+		実際、max上で180[cm]で作成したモデルは、unity上でも、そのくらいだった(隣に2 unit(= 2m)のcubeを置いて確認)
+
+
+■《Unity備忘録》3DCGで設定したアニメーションをUnityで制御する方法
+	http://www.pointcloud.jp/blog_n29/
+	
+	contents
+		上記で作成したFBX fileの読み込み.
+		
+	my note after readinf this page.
+		＜2＞UnityでFBXを読み込みアニメーションの初期設定
+			にてAnimation clipを定義すると、これらがProject view内Asset、
+			3ds maxからimportしたAssetにAnimation clipとして定義が追加される。
+
+
+/************************************************************
+other URLs
+************************************************************/
+■3ds Max biped puzzle
+	http://answers.unity3d.com/questions/311530/3d-s-max-biped.html
+	
+	contents
+		bipedを作成してimportしたけど、表示されない
+		->meshが必要だよ、と言われている
+

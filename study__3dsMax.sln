@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{56F1B2A2-1240-CB09-EEFB-BE48AA2D0DA9}") = "study__3dsMax", "Assembly-CSharp.csproj", "{61420CE1-7213-98AE-8BA7-902518562389}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61420CE1-7213-98AE-8BA7-902518562389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61420CE1-7213-98AE-8BA7-902518562389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61420CE1-7213-98AE-8BA7-902518562389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61420CE1-7213-98AE-8BA7-902518562389}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
