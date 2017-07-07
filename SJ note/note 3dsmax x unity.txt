@@ -29,6 +29,8 @@ unitytest.max
 ・	FBX converter
 		http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=22694909
 		
+		convertでなく、maxの書き出すFBXのcheckに使用した.
+		
 		FBX 2013.3 Converter for Windows (exe - 26335Kb)
 		...not 64bit
 		を使用した.
@@ -42,6 +44,9 @@ unitytest.max
 ・	FBXの書き出しには、「Alias(*.FBX)」を使用。
 		設定は、以下を参照
 			FBX converter.png
+		
+		"FBX exporter warning.png"に示すwarningが出るが、
+		YESでそのまま書き出す
 			
 ・	textureは、FBX書き出しにて、embedを指定
 ・	FBX fileは、FBX converterにてcheckすること
