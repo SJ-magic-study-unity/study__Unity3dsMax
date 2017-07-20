@@ -1,7 +1,7 @@
 /************************************************************
 files description
 ************************************************************/
-FBC converter(win)
+FBX converter(win)
 	converter(exe) downloaded from web site.
 	
 Desktop-01.png
